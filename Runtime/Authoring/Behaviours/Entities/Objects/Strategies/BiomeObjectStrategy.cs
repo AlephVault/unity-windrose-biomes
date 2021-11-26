@@ -113,12 +113,14 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                         [SerializeField]
                         internal BiomeSet biomeSet;
 
-                        // The current biome.
+                        /// <summary>
+                        ///   The current biome for this object.
+                        /// </summary>
                         [SerializeField]
                         private byte biome = 0;
 
                         /// <summary>
-                        ///   The current biome for this object.
+                        ///   See <see cref="biome"/>.
                         /// </summary>
                         public byte Biome
                         {
