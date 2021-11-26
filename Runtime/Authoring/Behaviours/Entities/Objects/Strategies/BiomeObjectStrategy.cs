@@ -1,6 +1,5 @@
 using System;
 using AlephVault.Unity.Support.Utils;
-using Codice.CM.Common.Serialization;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Base;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Base;
