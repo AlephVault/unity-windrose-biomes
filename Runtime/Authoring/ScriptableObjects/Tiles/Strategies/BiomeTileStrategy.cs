@@ -1,7 +1,7 @@
+using System;
 using AlephVault.Unity.Support.Utils;
 using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.Tiles.Strategies;
 #if UNITY_EDITOR
-using System;
 using UnityEditor;
 #endif
 using UnityEngine;
