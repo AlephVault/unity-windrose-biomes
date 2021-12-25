@@ -1,4 +1,4 @@
-# WindRose
+# WindRose Strategies - Biomes
 This is the WindRose Biomes project, which defines certain features to use biomes in the maps. With biomes, objects may be restricted to move to certain position types where they are not currently allowed (e.g. walk vs. sail).
 
 # Install
