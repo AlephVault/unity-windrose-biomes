@@ -1,7 +1,7 @@
 using System;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Visuals;
-using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.Animations;
+using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.VisualResources;
 using GameMeanMachine.Unity.WindRose.Biomes.Authoring.Behaviours.Entities.Objects.Strategies;
 using GameMeanMachine.Unity.WindRose.Types;
 using UnityEngine;
