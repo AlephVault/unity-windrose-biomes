@@ -1,11 +1,11 @@
 {
   "name": "com.gamemeanmachine.unity.windrose.biomes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "displayName": "Game Mean Machine - Unity - WindRose Strategies - Biomes",
   "description": "Defines certain features to use biomes in the maps. With biomes, objects may be restricted to move to certain position types where they are not currently allowed (e.g. walk vs. sail).",
   "unity": "2018.1",
   "dependencies": {
-    "com.gamemeanmachine.unity.windrose": "0.0.3"
+    "com.gamemeanmachine.unity.windrose": "0.0.4"
   },
   "author": {
     "name": "Game Mean Machine",

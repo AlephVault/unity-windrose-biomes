@@ -1,4 +1,5 @@
 using System;
+using Codice.Client.BaseCommands;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Visuals;
 using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.VisualResources;
@@ -30,7 +31,7 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
             private MapObject mapObject;
 
             private BiomeObjectStrategy biomeObjectStrategy;
-
+            
             private void Awake()
             {
                 biomeObjectStrategy = GetComponent<BiomeObjectStrategy>();
@@ -40,16 +41,16 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
             private void UseGround()
             {
                 MultiRoseAnimated multiRoseAnimated = mapObject.MainVisual.GetComponent<MultiRoseAnimated>();
-                multiRoseAnimated.ReplaceState("", GroundStaying);
-                multiRoseAnimated.ReplaceState("moving", GroundMoving);
+                multiRoseAnimated.ReplaceState(MapObject.IDLE_STATE, GroundStaying);
+                multiRoseAnimated.ReplaceState(MapObject.MOVING_STATE, GroundMoving);
                 biomeObjectStrategy.Biome = 0;
             }
 
             private void UseWater()
             {
                 MultiRoseAnimated multiRoseAnimated = mapObject.MainVisual.GetComponent<MultiRoseAnimated>();
-                multiRoseAnimated.ReplaceState("", WaterStaying);
-                multiRoseAnimated.ReplaceState("moving", WaterMoving);
+                multiRoseAnimated.ReplaceState(MapObject.IDLE_STATE, WaterStaying);
+                multiRoseAnimated.ReplaceState(MapObject.MOVING_STATE, WaterMoving);
                 biomeObjectStrategy.Biome = 1;
             }
 
