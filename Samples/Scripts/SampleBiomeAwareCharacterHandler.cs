@@ -1,5 +1,3 @@
-using System;
-using Codice.Client.BaseCommands;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Visuals;
 using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.VisualResources;
