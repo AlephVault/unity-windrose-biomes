@@ -28,6 +28,11 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                     [RequireComponent(typeof(LayoutObjectStrategy))]
                     public class BiomeObjectStrategy : ObjectStrategy
                     {
+                        /// <summary>
+                        ///   The related layout strategy.
+                        /// </summary>
+                        public LayoutObjectStrategy LayoutStrategy { get; private set; }
+                        
                         #if UNITY_EDITOR
                         [CustomEditor(typeof(BiomeObjectStrategy))]
                         public class BiomeObjectStrategyEditor : Editor
@@ -143,6 +148,8 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                         protected override void Awake()
                         {
                             base.Awake();
+                            LayoutStrategy = GetComponent<LayoutObjectStrategy>();
+
                             if (biomeSet == null)
                             {
                                 Destroy(gameObject);

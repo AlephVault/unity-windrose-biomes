@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Simple;
+using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
+using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Base;
 using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Solidness;
+using GameMeanMachine.Unity.WindRose.Types;
 using UnityEngine;
 
 
@@ -36,24 +37,45 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                             ///     Its counterpart is <see cref="BiomeAwareSimpleObjectStrategy"/>.
                             ///   </para> 
                             /// </summary>
-                            [RequireComponent(typeof(LayoutObjectsManagementStrategy))]
                             [RequireComponent(typeof(SolidnessObjectsManagementStrategy))]
                             [RequireComponent(typeof(BiomeObjectsManagementStrategy))]
                             public class BiomeAwareSimpleObjectsManagementStrategy : ObjectsManagementStrategy
                             {
-                                protected override ObjectsManagementStrategy[] GetDependencies()
+                                /// <summary>
+                                ///   The related solidness strategy.
+                                /// </summary>
+                                public SolidnessObjectsManagementStrategy SolidnessStrategy  { get; private set; }
+                                
+                                /// <summary>
+                                ///   The related biomes strategy.
+                                /// </summary>
+                                public BiomeObjectsManagementStrategy BiomeStrategy { get; private set; }
+
+                                protected override void Awake()
                                 {
-                                    return new ObjectsManagementStrategy[]
-                                    {
-                                        GetComponent<LayoutObjectsManagementStrategy>(),
-                                        GetComponent<SolidnessObjectsManagementStrategy>(),
-                                        GetComponent<BiomeObjectsManagementStrategy>()
-                                    };
+                                    base.Awake();
+                                    SolidnessStrategy = GetComponent<SolidnessObjectsManagementStrategy>();
+                                    BiomeStrategy = GetComponent<BiomeObjectsManagementStrategy>();
                                 }
 
                                 protected override Type GetCounterpartType()
                                 {
                                     return typeof(BiomeAwareSimpleObjectStrategy);
+                                }
+
+                                public override bool CanAllocateMovement(ObjectStrategy strategy, ObjectsManagementStrategyHolder.Status status, Direction direction, bool continued)
+                                {
+                                    BiomeAwareSimpleObjectStrategy basStrategy = (BiomeAwareSimpleObjectStrategy) strategy;
+                                    return BiomeStrategy.CanAllocateMovement(
+                                        basStrategy.BiomeStrategy, status, direction, continued
+                                    ) && SolidnessStrategy.CanAllocateMovement(
+                                        basStrategy.SolidnessStrategy, status, direction, continued
+                                    );
+                                }
+
+                                public override bool CanClearMovement(ObjectStrategy strategy, ObjectsManagementStrategyHolder.Status status)
+                                {
+                                    return true;
                                 }
                             }
                         }

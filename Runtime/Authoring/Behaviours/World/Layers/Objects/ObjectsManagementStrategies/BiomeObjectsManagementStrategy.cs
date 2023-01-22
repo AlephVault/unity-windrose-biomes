@@ -47,12 +47,17 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                                 // This variable is set on strategy initialization.
                                 private Bitmask[] biomes;
 
-                                private LayoutObjectsManagementStrategy layoutObjectsManagementStrategy;
+                                /// <summary>
+                                ///   The related layout strategy.
+                                /// </summary>
+                                public LayoutObjectsManagementStrategy LayoutObjectsManagementStrategy { get;
+                                    private set;
+                                }
 
                                 protected override void Awake()
                                 {
                                     base.Awake();
-                                    layoutObjectsManagementStrategy = GetComponent<LayoutObjectsManagementStrategy>();
+                                    LayoutObjectsManagementStrategy = GetComponent<LayoutObjectsManagementStrategy>();
                                 }
 
                                 // For a given biome bitmask, checks whether any square in any adjacent side
@@ -83,16 +88,14 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                                 ///   Tests whether the new strategy is not null and also has the same
                                 ///   biome set of this management strategy
                                 /// </summary>
-                                /// <param name="otherComponentsResults">
-                                ///   A dictionary holding the calculated value, for this method, in the dependencies. You can -and often
-                                ///     WILL- also take those values into account for this calculation</param>
                                 /// <param name="strategy">The object strategy counterpart to accept or reject</param>
                                 /// <param name="reason">And output reason for the rejection</param>
                                 /// <returns>Whether the strategy is rejected or not</returns>
-                                public override bool CanAttachStrategy(Dictionary<ObjectsManagementStrategy, bool> otherComponentsResults, ObjectStrategy strategy, ref string reason)
+                                public bool CanAttachStrategy(ObjectStrategy strategy, ref string reason)
                                 {
-                                    if (!base.CanAttachStrategy(otherComponentsResults, strategy, ref reason)) return false;
-                                    if (((BiomeObjectStrategy) strategy).biomeSet == biomeSet)
+                                    BiomeObjectStrategy biomeStrategy = (BiomeObjectStrategy)strategy;
+                                    if (!LayoutObjectsManagementStrategy.CanAttachStrategy(biomeStrategy.LayoutStrategy, ref reason)) return false;
+                                    if (biomeStrategy.biomeSet == biomeSet)
                                     {
                                         return true;
                                     }
@@ -101,12 +104,17 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                                 }
 
                                 public override bool CanAllocateMovement(
-                                    Dictionary<ObjectsManagementStrategy, bool> otherComponentsResults, ObjectStrategy strategy,
-                                    ObjectsManagementStrategyHolder.Status status, Direction direction,
+                                    ObjectStrategy strategy, ObjectsManagementStrategyHolder.Status status, Direction direction,
                                     bool continued
                                 )
                                 {
-                                    if (!otherComponentsResults[layoutObjectsManagementStrategy]) return false;
+                                    BiomeObjectStrategy biomeStrategy = (BiomeObjectStrategy)strategy;
+                                    if (!LayoutObjectsManagementStrategy.CanAllocateMovement(strategy, status,
+                                        direction, continued))
+                                    {
+                                        return false;
+                                    }
+
                                     // Also, if the object is NOT 1x1, then movement is currently not supported.
                                     // This will change in a future development, but so far it will be totally
                                     // ruled out.
@@ -121,13 +129,12 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                                     }
                                     // Otherwise, the check will be done similarly to what the Layout strategy
                                     // does in general for block/unblock.
-                                    return !IsAdjacencyUnset(biomes[((BiomeObjectStrategy)strategy).Biome], status.X, status.Y, strategy.StrategyHolder.Object.Width, strategy.StrategyHolder.Object.Height, direction);
+                                    return !IsAdjacencyUnset(biomes[biomeStrategy.Biome], status.X, status.Y, strategy.StrategyHolder.Object.Width, strategy.StrategyHolder.Object.Height, direction);
                                 }
 
                                 public override bool CanClearMovement(
-                                    Dictionary<ObjectsManagementStrategy, bool> otherComponentsResults,
-                                    ObjectStrategy strategy, ObjectsManagementStrategyHolder.Status status)
-                                {
+                                    ObjectStrategy strategy, ObjectsManagementStrategyHolder.Status status
+                                ) {
                                     return true;
                                 }
                                 

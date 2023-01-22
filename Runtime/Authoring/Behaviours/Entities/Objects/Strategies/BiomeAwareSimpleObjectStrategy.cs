@@ -22,11 +22,30 @@ namespace GameMeanMachine.Unity.WindRose.Biomes
                     ///     <see cref="BiomeObjectStrategy"/>.
                     ///   Its counterpart type is <see cref="BiomeAwareSimpleObjectsManagementStrategy"/>.
                     /// </summary>
-                    [RequireComponent(typeof(LayoutObjectStrategy))]
                     [RequireComponent(typeof(SolidnessObjectStrategy))]
                     [RequireComponent(typeof(BiomeObjectStrategy))]
                     public class BiomeAwareSimpleObjectStrategy : ObjectStrategy
                     {
+                        /// <summary>
+                        ///   The related solidness strategy.
+                        /// </summary>
+                        public SolidnessObjectStrategy SolidnessStrategy { get; private set; }
+                        
+                        /// <summary>
+                        ///   The related biome strategy.
+                        /// </summary>
+                        public BiomeObjectStrategy BiomeStrategy { get; private set; }
+                        
+                        /// <summary>
+                        ///   The related layout strategy.
+                        /// </summary>
+                        protected override void Awake()
+                        {
+                            base.Awake();
+                            SolidnessStrategy = GetComponent<SolidnessObjectStrategy>();
+                            BiomeStrategy = GetComponent<BiomeObjectStrategy>();
+                        }
+
                         /// <summary>
                         ///   Its counterpart type is
                         ///   <see cref="BiomeAwareSimpleObjectsManagementStrategy"/>.
