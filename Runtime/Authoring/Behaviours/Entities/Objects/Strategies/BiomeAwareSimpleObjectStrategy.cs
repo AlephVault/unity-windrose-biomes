@@ -1,12 +1,12 @@
 ﻿using System;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Base;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Solidness;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Base;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Solidness;
+using AlephVault.Unity.WindRose.Biomes.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
 using UnityEngine;
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Authoring
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Authoring
     {

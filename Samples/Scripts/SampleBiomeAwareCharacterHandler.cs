@@ -1,12 +1,12 @@
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Visuals;
-using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.VisualResources;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.Behaviours.Entities.Objects.Strategies;
-using GameMeanMachine.Unity.WindRose.Types;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Visuals;
+using AlephVault.Unity.WindRose.Authoring.ScriptableObjects.VisualResources;
+using AlephVault.Unity.WindRose.Biomes.Authoring.Behaviours.Entities.Objects.Strategies;
+using AlephVault.Unity.WindRose.Types;
 using UnityEngine;
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Samples
     {

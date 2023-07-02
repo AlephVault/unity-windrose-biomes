@@ -1,13 +1,13 @@
 using System;
 using AlephVault.Unity.Support.Utils;
-using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.Tiles.Strategies;
+using AlephVault.Unity.WindRose.Authoring.ScriptableObjects.Tiles.Strategies;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Authoring
     {

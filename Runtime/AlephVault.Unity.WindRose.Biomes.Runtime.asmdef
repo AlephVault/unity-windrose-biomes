@@ -1,9 +1,9 @@
 {
-    "name": "GameMeanMachine.Unity.WindRose.Biomes.Samples",
+    "name": "AlephVault.Unity.WindRose.Biomes.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:f7c3966930d94b1788eddc41d2f8ceb5",
-        "GUID:439919d2a7071004695af55cbbe6745b"
+        "GUID:9fb1e86edc1bf4f46bfc867526bca155",
+        "GUID:d61261d1a98c4fafa1e0b59ab5c62fcc"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

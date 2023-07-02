@@ -1,20 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Base;
-using GameMeanMachine.Unity.WindRose.Authoring.ScriptableObjects.Tiles;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.Behaviours.Entities.Objects.Strategies;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.ScriptableObjects.Tiles;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.ScriptableObjects.Tiles.Strategies;
-using GameMeanMachine.Unity.WindRose.Biomes.Types;
-using GameMeanMachine.Unity.WindRose.Types;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Base;
+using AlephVault.Unity.WindRose.Authoring.ScriptableObjects.Tiles;
+using AlephVault.Unity.WindRose.Biomes.Authoring.Behaviours.Entities.Objects.Strategies;
+using AlephVault.Unity.WindRose.Biomes.Authoring.ScriptableObjects.Tiles;
+using AlephVault.Unity.WindRose.Biomes.Authoring.ScriptableObjects.Tiles.Strategies;
+using AlephVault.Unity.WindRose.Biomes.Types;
+using AlephVault.Unity.WindRose.Types;
 using UnityEngine;
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Authoring
     {

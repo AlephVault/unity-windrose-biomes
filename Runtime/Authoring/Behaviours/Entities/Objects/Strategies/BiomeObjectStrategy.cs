@@ -1,18 +1,18 @@
 using System;
 using AlephVault.Unity.Support.Utils;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Base;
-using GameMeanMachine.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Base;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
-using GameMeanMachine.Unity.WindRose.Biomes.Authoring.ScriptableObjects.Tiles;
-using GameMeanMachine.Unity.WindRose.Biomes.Types;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.Entities.Objects.Strategies.Base;
+using AlephVault.Unity.WindRose.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies.Base;
+using AlephVault.Unity.WindRose.Biomes.Authoring.Behaviours.World.Layers.Objects.ObjectsManagementStrategies;
+using AlephVault.Unity.WindRose.Biomes.Authoring.ScriptableObjects.Tiles;
+using AlephVault.Unity.WindRose.Biomes.Types;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Authoring
     {

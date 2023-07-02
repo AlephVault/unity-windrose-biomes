@@ -1,7 +1,7 @@
-using GameMeanMachine.Unity.WindRose.Types;
+using AlephVault.Unity.WindRose.Types;
 
 
-namespace GameMeanMachine.Unity.WindRose.Biomes
+namespace AlephVault.Unity.WindRose.Biomes
 {
     namespace Types
     {
